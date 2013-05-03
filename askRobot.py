@@ -5,7 +5,7 @@ import cookielib
 import random
 import sys
 import json
-import lxml
+import lxml #打包exe需要
 from pyquery import PyQuery as pq
 
 type = sys.getfilesystemencoding()
