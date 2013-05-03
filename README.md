@@ -1,4 +1,5 @@
-py-my-first-work
-================
+##py-my-first-work
 
-读心机器人。robot。
+
+数据来自微软的读心机器人。
+我的第一个py练习。
