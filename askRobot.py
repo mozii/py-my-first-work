@@ -8,9 +8,6 @@ import json
 import lxml #打包exe需要
 from pyquery import PyQuery as pq
 
-type = sys.getfilesystemencoding()
-#.decode('UTF-8').encode(type)
-
 def start():
 	print "####","\n",u"我们来玩一个游戏，只要你诚实，我就能读出你心里所想的某个人^_^。","\n",u"我会提问，请输入你的选择：1是yes，2是no，3是unknown，然后按下‘回车’。","\n","####","\n",u"准备好了吗？","\n"
 	start = raw_input()
@@ -27,7 +24,6 @@ def index():
 	req = urllib2.Request("http://renlifang.msra.cn/Q20/index.aspx")  
 	req.add_header("Referer","http://renlifang.msra.cn/Q20/index.aspx")  
 	resp = urllib2.urlopen(req)  
-	# print resp.read() 
 
 def first():
 	para = {
@@ -112,7 +108,6 @@ def justDo():
 				question = question.replace("/App_Themes/cn/images/people.png","http://renlifang.msra.cn/App_Themes/cn/images/people.png").replace("/view.aspx","http://renlifang.msra.cn/view.aspx") 
 			else:
 				question = question.replace("/portrait.aspx","http://renlifang.msra.cn/portrait.aspx").replace("/view.aspx","http://renlifang.msra.cn/view.aspx")
-			# question = question.replace("你所猜的人物是：","")
 			writeData(question)
 			d = pq(question)
 			question = d('.entity-name-result').html()
